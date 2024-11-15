@@ -1,0 +1,18 @@
+{
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "watch": [
+    "app.mjs",
+    "routes",
+    "model",
+    "middlewares",
+    "templates",
+    "utils",
+    ".env",
+    "logger.js",
+    "swaggerConfig.js"
+  ],
+  "ext": "js,json,mjs",
+  "exec": "node app.mjs"
+}
