@@ -51,7 +51,7 @@ mongoose
     });
 
     app.post("/api/post-each", async (req, res) => {
-      const { name, email, address, city, zip, step } = req.body;
+      const { name, email, address, city, jobTitle, zip, step } = req.body;
       try {
         // Find an existing document by name and email
         const existingDocument = await testModel.findOne({ name, email });
@@ -61,6 +61,9 @@ mongoose
           if (step === 1) {
             existingDocument.address = address;
             existingDocument.city = city;
+            existingDocument.zip = zip;
+          } else if (step === 2) {
+            existingDocument.jobTitle = jobTitle;
             existingDocument.zip = zip;
           }
           await existingDocument.save();
